@@ -7,8 +7,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <nav>
+        <div className="title">Currency Exhange App</div>
         <NavLink to="/currency" activeClassName="selected">Currency Rates</NavLink>
         <NavLink to="/exchange" activeClassName="selected">Exchange Rates</NavLink>
         <NavLink to="/historical" activeClassName="selected">Historical Rates</NavLink>
