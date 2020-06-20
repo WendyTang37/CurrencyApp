@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background: #333;
+  box-shadow: 0px 2px 5px #999;
+}
+
+nav a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background: #555;
+}
+
+nav a.selected {
+  background: #555;
+  transition: background 0.4s;
+
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,63 @@
+.CurrencyRates {
+}
+
+.rate-info-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 15px;
+}
+
+.rate-info {
+    display: inline-grid;
+    grid-template-rows: 1.2em 1.2em; 
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+        "icon info-title"
+        "icon info-detail";
+    column-gap: 10px;
+    font-size: 14px;
+}
+
+.rate-info i {
+    grid-area: icon;
+    align-self: center;
+}
+
+.rate-info .title {
+    font-weight: 700;
+    grid-area: info-title;
+}
+
+.rate-info .detail {
+    grid-area: info-detail;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    width: 80vw;
+    margin: 10px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #999;
+}
+
+thead tr {
+    background-color: #333;
+    color: #fff;
+}
+
+tr {
+    background-color: #DDD;
+}
+tr:nth-child(even) {
+    background-color: #CCC;
+}
+
+td {
+    padding: 10px;
+}

@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/mithril-currency-app/node_modules
+/react-currency-app/node_modules
+/react-currency-app/.pnp
+/react-currency-app/.pnp.js
+
+# testing
+/react-currency-app/coverage
+
+# production
+/react-currency-app/build
+
+# misc
+/react-currency-app/.DS_Store
+/react-currency-app/.env.local
+/react-currency-app/.env.development.local
+/react-currency-app/.env.test.local
+/react-currency-app/.env.production.local
+
+/react-currency-app/npm-debug.log*
+/react-currency-app/yarn-debug.log*
+/react-currency-app/yarn-error.log*

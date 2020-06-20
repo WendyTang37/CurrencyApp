@@ -1,0 +1,19 @@
+{
+  "name": "mithril-currency-app",
+  "version": "1.0.0",
+  "description": "App to display currency rate and exchange rates",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack src/index.js --output bin/app.js -d --watch"
+  },
+  "keywords": [],
+  "author": "Wendy Tang",
+  "license": "ISC",
+  "dependencies": {
+    "mithril": "^2.0.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
