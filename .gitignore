@@ -11,6 +11,7 @@
 
 # production
 /react-currency-app/build
+/mithril-currency-app/bin
 
 # misc
 /react-currency-app/.DS_Store

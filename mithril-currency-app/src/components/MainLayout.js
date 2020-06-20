@@ -19,8 +19,9 @@ export default {
                 name:'Historical Rates'
             },
         ];
+        let currentRoute = m.route.get();
         return m('div', {class: 'main-layout'}, [
-            m(Navigation, {tabs, title}),
+            m(Navigation, {tabs, title, currentRoute}),
             m('section.main-container', vnode.children)
         ]);
     }
