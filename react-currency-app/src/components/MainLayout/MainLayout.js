@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
-import ExchangeRates from './components/ExchangeRates/ExchangeRates';
-import CurrencyRates from './components/CurrencyRates/CurrencyRates';
-import HistoricalRates from './components/HistoricalRates/HistoricalRates';
-import './App.css';
+import ExchangeRates from '../ExchangeRates/ExchangeRates';
+import CurrencyRates from '../CurrencyRates/CurrencyRates';
+import HistoricalRates from '../HistoricalRates/HistoricalRates';
+import './MainLayout.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="MainLayout">
       <nav>
         <div className="title">Currency Exhange App</div>
         <NavLink to="/currency" activeClassName="selected">Currency Rates</NavLink>

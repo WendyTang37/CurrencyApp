@@ -43,10 +43,6 @@ nav a {
   cursor: pointer;
 }
 
-/*nav a:first-child {
-  margin-right: auto;
-}
-*/
 nav a:hover {
   background: #555;
   transition: background 0.4s;
@@ -59,6 +55,9 @@ nav a.selected {
 .main-container {
   grid-area: content;
 }
+
+
+/* CurrencyRates component styling */
 
 .CurrencyRates {
 }
@@ -123,4 +122,73 @@ tr:nth-child(even) {
 
 td, th {
     padding: 10px;
+}
+
+
+/* Exchange Rates Component styling */
+
+.conversion-container {
+    width: 80vw;
+    display: flex;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        'from-currency to-currency amount'
+        '. button .';
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+
+.conversion-container input, select {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.from-currency-container {
+    grid-area: from-currency;
+}
+
+.to-currency-container {
+    grid-area: to-currency;
+}
+
+.amount-container {
+    grid-area: amount;
+}
+
+.convert-button-container {
+    grid-area: button;
+    text-align: center;
+}
+
+.convert-button {
+    padding: 10px 15px;
+    font-size: 1.1em;
+    background-color: #67baf5;
+    color: #fff;
+    border: 1px solid;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.convert-button:hover {
+    background-color: #5ba4d8;
+}
+
+.conversion-result-container {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 1.5em;
 }

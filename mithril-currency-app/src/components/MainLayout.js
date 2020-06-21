@@ -20,7 +20,7 @@ export default {
             },
         ];
         let currentRoute = m.route.get();
-        return m('div', {class: 'main-layout'}, [
+        return m('div.main-layout', [
             m(Navigation, {tabs, title, currentRoute}),
             m('section.main-container', vnode.children)
         ]);

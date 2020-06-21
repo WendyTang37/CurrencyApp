@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import RatesService from '../../services/RatesService';
 
 import './CurrencyRates.css';
 
 const CurrencyRates = (props) => {
 
-  const [rates, setRates] = useState(null);
+  const [rates, setRates] = useState([]);
+  const [base, setBase] = useState('');
+  const [date, setDate] = useState('');
 
   useEffect(() => {
-    axios('https://api.exchangeratesapi.io/latest?base=USD')
-    .then(res => setRates(res.data));
+    RatesService.getCurrencyRates()
+      .then(res => {
+        setRates(res.rates);
+        setBase(res.base);
+        setDate(res.date);
+      });
   }, []);
 
   const getCurrencyRateTableItems = () => {
-    // if(rates) {
-      // console.log(rates);
-      return Object.entries(rates.rates).map(([code,rate]) => {
+      return Object.entries(rates).map(([code,rate]) => {
         return (
           <tr key={code}>
             <td>{code}</td>
@@ -23,54 +27,35 @@ const CurrencyRates = (props) => {
           </tr>
         );
       });
-
-    // }
   };
-
-  const display = () => {
-    if(rates) {
-      return (
-        <div>
-          <div className="rate-info-container">
-            <div className="rate-info">
-              <i class="fas fa-calendar-alt"></i>
-              <div className="title">DATE</div>
-              <div calssName="detail">{rates.date}</div>
-            </div>
-            <div className="rate-info">
-              <i class="far fa-money-bill-alt"></i>
-              <div className="title">BASE</div>
-              <div className="detail">{rates.base}</div>
-            </div>
-
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Code</th>
-                <th>Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              {getCurrencyRateTableItems()}
-            </tbody>
-          </table>
-        </div>
-      );
-    } else {
-      return (
-        <div>Loading...</div>
-      );
-    }
-  }
-
 
   return (
     <div className="CurrencyRates">
       <h2>Currency Rates</h2>
       <hr />
-      {display()}
-     
+      <div className="rate-info-container">
+        <div className="rate-info">
+          <i className="fas fa-calendar-alt"></i>
+          <div className="title">DATE</div>
+          <div className="detail">{date}</div>
+        </div>
+        <div className="rate-info">
+          <i className="far fa-money-bill-alt"></i>
+          <div className="title">BASE</div>
+          <div className="detail">{base}</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          {getCurrencyRateTableItems()}
+        </tbody>
+      </table>
     </div>
   )
 }

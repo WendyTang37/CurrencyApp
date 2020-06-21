@@ -1,4 +1,4 @@
-.App {
+.MainLayout {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr auto 1fr;
