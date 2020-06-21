@@ -31,7 +31,7 @@ const Rates = {
     getHistoricalRates: (date) => {
         return m.request({
             method: "GET",
-            url: `https://api.exchangeratesapi.io/${date}`
+            url: `https://api.exchangeratesapi.io/${date}?base=USD`
         });
     },
     getCurrencies: () => {

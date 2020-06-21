@@ -1,23 +1,29 @@
 import axios from 'axios';
 
 const fx = window.fx;
+const setFx = (data) => {
+    fx.base = data.base;
+    fx.rates = data.rates;
+};
 
 const RatesService = {
     getCurrencyRates: () => {
         if(sessionStorage.getItem('currencyRates')) {
             const data = JSON.parse(sessionStorage.getItem('currencyRates'));
-            fx.base = data.base;
-            fx.rates = data.rates;
+            setFx(data);
             return Promise.resolve(data);
         } else {
             return axios('https://api.exchangeratesapi.io/latest?base=USD')
                 .then(res => {
                     sessionStorage.setItem('currencyRates', JSON.stringify(res.data));
-                    fx.base = res.data.base;
-                    fx.rates = res.data.rates;
+                    setFx(res.data);
                     return res.data;
                 });
         }
+    },
+    getHistoricalRates: (date) => {
+        return axios(`https://api.exchangeratesapi.io/${date}?base=USD`)
+            .then(res => res.data);
     },
     convert: (from, to, amount) => {
         if(!fx.base || !fx.rates) {

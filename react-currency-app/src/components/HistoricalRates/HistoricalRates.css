@@ -1,0 +1,43 @@
+.date-form-container {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.date-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.date-form div {
+  margin-right: 10px;
+}
+
+.date-label {
+  display: block;
+}
+
+.date-input {
+    padding: 10px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.date-submit-button {
+    font-size: 1.1em;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #67baf5;
+    color: #fff;
+    border: 1px solid #67baf5;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.date-submit-button:hover {
+    background-color: #5ba4d8;
+}
