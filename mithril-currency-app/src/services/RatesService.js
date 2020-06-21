@@ -1,14 +1,17 @@
 import m from 'mithril';
 
 const fx = window.fx;
+const setFx = (data) => {
+    fx.base = data.base;
+    fx.rates = data.rates;
+}
 
 const Rates = {
-    getCurrencyRates: (state) => {
+    getCurrencyRates: () => {
         if(sessionStorage.getItem('currencyRates')) {
             return new Promise((resolve, reject) => {
                 const data = JSON.parse(sessionStorage.getItem('currencyRates'));
-                fx.base = data.base;
-                fx.rates = data.rates;
+                setFx(data);
                 resolve(data);
                 m.redraw();
             });
@@ -20,11 +23,16 @@ const Rates = {
             })
             .then(data => {
                 sessionStorage.setItem('currencyRates', JSON.stringify(data));
-                fx.base = data.base;
-                fx.rates = data.rates;
+                setFx(data);
                 return data;
             });
         }
+    },
+    getHistoricalRates: (date) => {
+        return m.request({
+            method: "GET",
+            url: `https://api.exchangeratesapi.io/${date}`
+        });
     },
     getCurrencies: () => {
         if(sessionStorage.getItem('currencies')) {
