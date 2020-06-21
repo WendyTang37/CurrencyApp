@@ -47,7 +47,7 @@ const ExchangeRates = (props) => {
             <h2>Exchange Rates</h2>
             <hr/>
             <form className="conversion-container" onSubmit={convertCurrency}>
-                <div className="from-currency-container">
+                <div className="field-container">
                     <label className="from-currency-label" htmlFor="from-currency" >From</label>
                     <select className="from-currency-select" 
                             placeholder="select"
@@ -60,7 +60,7 @@ const ExchangeRates = (props) => {
                         {getCurrenciesDropDown()}
                     </select>
                 </div>
-                <div className="to-currency-container"> 
+                <div className="field-container"> 
                     <label className="to-currency-label" htmlFor="to-currency">To</label>
                     <select className="to-currency-select" 
                             id="to-currency" 
@@ -72,7 +72,7 @@ const ExchangeRates = (props) => {
                         {getCurrenciesDropDown()}
                     </select>
                 </div>
-                <div className="amount-container">
+                <div className="field-container">
                     <label className="amount-label" htmlFor="amount">Amount</label>
                     <input className="amount-input" 
                             type="tel" id="amount" 

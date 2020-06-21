@@ -130,16 +130,8 @@ td, th {
 .conversion-container {
     width: 80vw;
     display: flex;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        'from-currency to-currency amount'
-        '. button .';
-    column-gap: 15px;
-    row-gap: 15px;
+    flex-flow: row wrap;
 }
-
 
 .conversion-container input, select {
     padding: 10px;
@@ -151,22 +143,21 @@ td, th {
     outline: none;
 }
 
-.from-currency-container {
-    grid-area: from-currency;
+.field-container {
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
-.to-currency-container {
-    grid-area: to-currency;
-}
-
-.amount-container {
-    grid-area: amount;
+.field-container:not(:first-child) {
+    margin-left: 10px;
 }
 
 .convert-button-container {
-    grid-area: button;
+    margin-top: 10px;
+    flex-basis: 100%;
     text-align: center;
 }
+
 
 .convert-button {
     padding: 10px 15px;

@@ -38,7 +38,7 @@ export default () => {
                 m('form.conversion-container', {
                         onsubmit: submitForm
                     }, [
-                    m('div.from-currency-container', [
+                    m('div.field-container', [
                         m('label.from-currency-label[for=from-currency]', 'From'),
                         m('select.from-currency-select#from-currency[name=from-currency][required]', {
                                 onchange: (e) => {state.selectedFromCurrency = e.target.value}
@@ -47,7 +47,7 @@ export default () => {
                             getCurrencyDropdown()
                         )
                     ]),
-                    m('div.to-currency-container', [
+                    m('div.field-container', [
                         m('label.to-currency-label[for=to-currency]', 'To'),
                         m('select.to-currency-select#to-currency[name=to-currency][required]', {
                                 onchange: (e) => {state.selectedToCurrency = e.target.value}
@@ -56,7 +56,7 @@ export default () => {
                             getCurrencyDropdown()
                         )
                     ]),
-                    m('div.amount-container', [
+                    m('div.field-container', [
                         m('label.amount-label[for=amount]', 'Amount'),
                         m('input.amount-input#amount[name=amount][type=tel][required]', {
                             value: state.amount,
