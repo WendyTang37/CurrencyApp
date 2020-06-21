@@ -60,7 +60,7 @@ export default () => {
                         m('label.amount-label[for=amount]', 'Amount'),
                         m('input.amount-input#amount[name=amount][type=tel][required]', {
                             value: state.amount,
-                            onchange: (e) => {state.amount = e.target.value}
+                            oninput: (e) => {state.amount = e.target.value}
                         })
                     ]),
                     m('div.convert-button-container', [
