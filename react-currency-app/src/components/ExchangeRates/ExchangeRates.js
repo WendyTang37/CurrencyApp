@@ -43,8 +43,8 @@ const ExchangeRates = (props) => {
     }
 
     return (
-        <div className="ExchangeRates">
-            <h2>Exchange Rate</h2>
+        <section className="ExchangeRates">
+            <h2>Exchange Rates</h2>
             <hr/>
             <form className="conversion-container" onSubmit={convertCurrency}>
                 <div className="from-currency-container">
@@ -87,9 +87,9 @@ const ExchangeRates = (props) => {
                 </div>
             </form>
             <div className="conversion-result-container">
-                {converted} {selectedCurrencyTo}
+                {amount} {selectedCurrencyFrom} = {converted} {selectedCurrencyTo}
             </div>
-        </div>
+        </section>
     );
 }
 

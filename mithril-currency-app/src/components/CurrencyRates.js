@@ -3,22 +3,34 @@ import m from 'mithril';
 import Rates from '../services/RatesService';
 
 export default () => {
+    let state = {
+        rates: {},
+        base: '',
+        date: '',
+    }
+
     return {
-        oninit: Rates.currency.fetch,
+        oninit: async function(vnode) {
+            await Rates.getCurrencyRates()
+                .then(data => {
+                    state = data;
+                    console.log(state);
+                });
+        },
         view: function() {
-            return m('div.CurrencyRates', [
+            return m('section.CurrencyRates', [
                 m('h2', 'Currency Rates'),
                 m('hr'),
                 m('div.rate-info-container', [
                     m('div.rate-info', [
                         m('i.fas.fa-calendar-alt'),
                         m('div.title', 'DATE'),
-                        m('div.detail', Rates.currency.data.date)
+                        m('div.detail', state.date)
                     ]),
                     m('div.rate-info', [
                         m('i.far.fa-money-bill-alt'),
                         m('div.title', 'BASE'),
-                        m('div.detail', Rates.currency.data.base)
+                        m('div.detail', state.base)
                     ])
                 ]),
                 m('table', [
@@ -28,7 +40,7 @@ export default () => {
                             m('th', 'Rate')
                         ])
                     ]),
-                    Object.entries(Rates.currency.data.rates).map(([code,rate]) => {
+                    Object.entries(state.rates).map(([code,rate]) => {
                         return m('tr', [
                             m('td', code),
                             m('td', rate)

@@ -33,7 +33,11 @@ const RatesService = {
             return Promise.resolve(JSON.parse(sessionStorage.getItem('currencies')));
         } else {
             return RatesService.getCurrencyRates()
-                .then((res) => Object.keys(res.rates));
+                .then((res) => {
+                    const currencies = Object.keys(res.rates)
+                    sessionStorage.setItem('currencies', JSON.stringify(currencies));
+                    return currencies;
+                });
         }
     }
 }

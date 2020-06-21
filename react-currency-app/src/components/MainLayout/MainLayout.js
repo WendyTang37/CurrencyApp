@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="MainLayout">
       <nav>
-        <div className="title">Currency Exhange App</div>
+        <div className="title">Currency Exchange App</div>
         <NavLink to="/currency" activeClassName="selected">Currency Rates</NavLink>
         <NavLink to="/exchange" activeClassName="selected">Exchange Rates</NavLink>
         <NavLink to="/historical" activeClassName="selected">Historical Rates</NavLink>

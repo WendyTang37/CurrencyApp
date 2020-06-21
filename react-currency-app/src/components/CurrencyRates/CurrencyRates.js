@@ -30,7 +30,7 @@ const CurrencyRates = (props) => {
   };
 
   return (
-    <div className="CurrencyRates">
+    <section className="CurrencyRates">
       <h2>Currency Rates</h2>
       <hr />
       <div className="rate-info-container">
@@ -56,7 +56,7 @@ const CurrencyRates = (props) => {
           {getCurrencyRateTableItems()}
         </tbody>
       </table>
-    </div>
+    </section>
   )
 }
 
