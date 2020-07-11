@@ -2,6 +2,7 @@
 
 # dependencies
 mithril-currency-app/node_modules
+mithril-typescript-app/node_modules
 react-currency-app/node_modules
 react-currency-app/.pnp
 react-currency-app/.pnp.js
@@ -12,6 +13,7 @@ react-currency-app/coverage
 # production
 react-currency-app/build
 mithril-currency-app/bin
+mithril-typescript-app/dist
 
 # misc
 /react-currency-app/.DS_Store
